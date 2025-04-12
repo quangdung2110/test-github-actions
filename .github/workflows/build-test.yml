@@ -34,4 +34,10 @@ jobs:
           npm test
         env: 
           CI: true
+
+      - name: Check path in runner
+        run: | 
+          ls -al ~
+          ls -al ~/.npm
+          ls -al /
       
