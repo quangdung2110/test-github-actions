@@ -40,6 +40,7 @@ jobs:
         with:
           name: build-output
           path: dist/
+          if-no-files-found: warn
 
       - name: Check path in runner
         run: | 
