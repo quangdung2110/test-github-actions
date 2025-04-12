@@ -15,11 +15,14 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./src/index.js",
     "build": "tsc",
     "test": "echo \"✅ Test passed (dummy)\""
   },
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
   }
 }
