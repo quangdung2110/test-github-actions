@@ -15,6 +15,11 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "build": "tsc",
     "test": "echo \"✅ Test passed (dummy)\""
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
