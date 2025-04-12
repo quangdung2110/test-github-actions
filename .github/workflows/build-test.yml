@@ -40,4 +40,12 @@ jobs:
           ls -al ~
           ls -al ~/.npm
           ls -al /
+
+      - name: Check machine info
+        run: |
+          echo "Machine: $(uname -a)"
+          echo "Home dir: $HOME"
+          echo "Current dir: $(pwd)"
+          echo "All files:"
+          ls -la
       
