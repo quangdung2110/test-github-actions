@@ -35,6 +35,12 @@ jobs:
         env: 
           CI: true
 
+      - name: Upload build output
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-output
+          path: dist/
+
       - name: Check path in runner
         run: | 
           ls -al ~
