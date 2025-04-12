@@ -1,0 +1,15 @@
+
+on:
+  schedule:
+    - cron: '30 5 * * 1,3'
+    - cron: '30 5 * * 2,4'
+
+jobs:
+  test-schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Not run on Monday or Wednesday
+        if: github.event.schedule != '30 5 * * 1,3'
+        run: echo 'This test will skip on Monday and Wednesday'
+      - name: Run every time
+        run: echo 'This step will always run'
