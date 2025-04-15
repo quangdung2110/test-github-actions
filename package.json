@@ -16,13 +16,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
-    "build": "tsc",
+    "build": "vite",
     "test": "echo \"✅ Test passed (dummy)\""
   },
   "dependencies": {
     "express": "^5.1.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.8.3"
   }
 }
