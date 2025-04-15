@@ -9,8 +9,8 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu:latest
 
-    matrix:
-      statregy:
+    strategy:
+      matrix:
         - version: [22.x]
 
     steps:
