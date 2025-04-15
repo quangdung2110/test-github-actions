@@ -7,11 +7,11 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu:latest
-
+    runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        - version: [22.x]
+        os: [ubuntu-latest]
+        node-version: [18.x]
 
     steps:
       - name: Check out
@@ -20,7 +20,7 @@ jobs:
       - name: Cache node_modules
         uses: actions/cache@v3
 
-      - name: Set up NodeJs ${{matrix.version}}
+      - name: Set up NodeJs ${{matrix.node-version}}
         uses: actions/setup-node@v4
 
       - name: Install dependencies and test
