@@ -52,6 +52,3 @@ jobs:
             docker pull quangdung2110/my-nodeapp
             docker stop app || true && docker rm app || true
             docker run -d --name app -p 3000:3000 quangdung2110/my-nodeapp
-
-  deploy:
-    runs-on: ubuntu:latest
