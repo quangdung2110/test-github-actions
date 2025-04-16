@@ -21,7 +21,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ matrix.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set up NodeJs ${{matrix.node-version}}
         uses: actions/setup-node@v4
@@ -46,4 +46,11 @@ jobs:
       - name: Push Docker Image to Registry
         run: |
           docker push quangdung2110/my-nodeapp
+
+      - name: Check structure of runner
+        run: |
+          ls -al /
+          ls -al ~
+          pwd
+          whoami
       
