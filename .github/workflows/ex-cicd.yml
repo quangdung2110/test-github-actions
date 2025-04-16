@@ -55,4 +55,6 @@ jobs:
           pwd
           whoami
           ls -al ~/.npm
+          ls -al ~/.npm/_cacache
+          ls -al ~/.npm/_logs
       
