@@ -42,13 +42,3 @@ jobs:
         run: |
           docker push quangdung2110/my-nodeapp
       
-      - name: Deploy 
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            docker pull quangdung2110/my-nodeapp
-            docker stop app || true && docker rm app || true
-            docker run -d --name app -p 3000:3000 quangdung2110/my-nodeapp
