@@ -17,11 +17,12 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
-      - name: Cache node_modules
+      - name: Cache npm
         uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ matrix.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{matrix.os}}-node-${{matrix.node-version}}
 
       - name: Set up NodeJs ${{matrix.node-version}}
         uses: actions/setup-node@v4
@@ -53,4 +54,5 @@ jobs:
           ls -al ~
           pwd
           whoami
+          cat ~/.npm
       
