@@ -54,5 +54,5 @@ jobs:
           ls -al ~
           pwd
           whoami
-          cat ~/.npm
+          ls -al ~/.npm
       
